@@ -423,8 +423,8 @@ footer {
 body {
     min-height: 100vh;
     background:
-        radial-gradient(circle at top, #27302c 0%, #101413 45%, #080a09 100%);
-    color: #fff;
+        radial-gradient(circle at top, #f5f7f6 0%, #f6f8f7 45%, #fcfefd 100%);
+    color: #040404;
 }
 
 /* =========================
