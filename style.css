@@ -805,14 +805,14 @@ body {
 .buy .action-button {
     background: linear-gradient(
         145deg,
-        #5bff2d,
-        #24e90f
+        #3a1de1,
+        #0c1bed
     );
 
-    color: #101510;
+    color: #f3f4f5;
 
     box-shadow:
-        0 0 25px rgba(61,255,30,.16);
+        0 0 25px rgba(84, 13, 227, 0.16);
 }
 
 .bolt {
