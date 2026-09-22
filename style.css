@@ -82,22 +82,47 @@ nav a {
   z-index: 1000;
   background: transparent;
   transition: var(--transition), box-shadow var(--transition), padding var(--transition);
-  padding: 22px 0;
+  padding: 22px 10px;
 }
 .navbar.scrolled {
   background: var(--white);
   box-shadow: 0 2px 20px rgba(0,0,0,0.09);
-  padding: 12px 0;
+  padding: 12px 10px;
+}
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+  .navbar.scrolled {
+    padding: 12px 20px;
+  }
+
 }
 .nav-inner {
+  max-width: 1150px;
+  margin: 0 auto;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+.nav-mark {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.nav-logo {
+    width: 120px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
 .logo {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 9;
 }
 .logo-main {
   font-size: 1.15rem;
@@ -126,16 +151,19 @@ nav a {
 
   position: absolute;
   top: 70px;
-  right: 20;
+  right: 40;
 
-  background: white
+  background: white;
+  padding: 10px 16px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12)
 }
 
 .navMenu.active {
   display: flex
 }
 
-.navMenu {
+.navMenu a {
   font-size: 0.9rem;
   font-weight: 500;
   color: rgba(0, 1, 6, 0.88);
@@ -252,7 +280,7 @@ nav a {
 section {
   max-width: 1150px;
   margin: auto;
-  padding: 90px 22px;
+  padding: 90px 10px;
 }
 
 .hero {
@@ -261,6 +289,7 @@ section {
   grid-template-columns: 1.2fr 0.8fr;
   gap: 65px;
   align-items: center;
+  padding-top: 160px;
 }
 
 .hero-image img {
@@ -305,6 +334,54 @@ article p {
   max-width: 650px;
 }
 
+/* Hero layout */
+.hero {
+    max-width: 1150px;
+    margin: auto;
+    padding: 160px 10px 90px;
+
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 65px;
+    align-items: center;
+}
+
+/* Hero image */
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+}
+
+/* Mobile layout */
+@media (max-width: 800px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 130px 10px 60px;
+        text-align: center;
+        gap: 35px;
+    }
+
+    .hero-image {
+        order: 2;
+    }
+
+    .hero-content {
+        order: 1;
+    }
+
+    .hero-image img {
+        max-width: 330px;
+    }
+}
 
 /* HERO CARD */
 
@@ -2378,5 +2455,48 @@ footer {
     .action-button {
         width: 61px;
         height: 61px;
+    }
+}
+
+/* FIX SIDE SPACING - DESKTOP & MOBILE */
+
+* {
+    box-sizing: border-box;
+}
+
+.container,
+.hero,
+section {
+    width: 100%;
+    max-width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Desktop */
+@media (min-width: 801px) {
+    .hero,
+    section {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+    .hero,
+    section,
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
