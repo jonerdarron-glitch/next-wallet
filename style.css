@@ -2457,3 +2457,193 @@ footer {
         height: 61px;
     }
 }
+
+
+/* ================================
+   HEADER & MOBILE MENU FIX
+================================ */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+
+    /* White blurred header */
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    padding: 14px 10px;
+}
+
+.nav-inner {
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Keep the hero below the fixed header */
+.hero {
+    padding-top: 150px;
+}
+
+/* ================================
+   MOBILE MENU BUTTON
+================================ */
+
+.menu-toggle {
+    display: block;
+    position: relative;
+    z-index: 10001;
+    background: transparent;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #111;
+}
+
+/* Navigation hidden by default */
+#navMenu {
+    display: none;
+}
+
+/* Navigation when opened */
+#navMenu.active {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 25px 20px;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Mobile layout */
+@media (max-width: 800px) {
+    .hero {
+        padding: 140px 10px 60px;
+    }
+
+    #navMenu a {
+        color: #111;
+        text-decoration: none;
+        font-size: 16px;
+    }
+}
+
+/* Desktop navigation */
+@media (min-width: 801px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    #navMenu.active {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        position: static;
+        width: auto;
+        padding: 0;
+        background: transparent;
+        box-shadow: none;
+    }
+}
+
+
+/* REDUCE DESKTOP SIDE SPACING */
+
+@media (min-width: 801px) {
+    .container,
+    .hero,
+    section {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 25px;
+        padding-right: 25px;
+        box-sizing: border-box;
+    }
+
+    .nav-inner {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}
+
+/* ================================
+   RESPONSIVE NAVIGATION
+================================ */
+
+/* Menu button hidden on desktop */
+@media (min-width: 801px) {
+
+    .menu-toggle {
+        display: none !important;
+    }
+
+    #navMenu {
+        display: flex !important;
+        flex-direction: row;
+        align-items: center;
+        gap: 25px;
+        position: static;
+        width: auto;
+        padding: 0;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    #navMenu a {
+        display: inline-block;
+        text-decoration: none;
+    }
+}
+
+/* Mobile menu button visible */
+@media (max-width: 800px) {
+
+    .menu-toggle {
+        display: block !important;
+        cursor: pointer;
+        position: relative;
+        z-index: 10001;
+    }
+
+    #navMenu {
+        display: none !important;
+    }
+
+    #navMenu.active {
+        display: flex !important;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 25px 20px;
+        background: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    #navMenu a {
+        text-decoration: none;
+    }
+}
